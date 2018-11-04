@@ -6,7 +6,7 @@ function Calendar2(id, year, month) {
         calendar = '<tr>',
         month = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
     if (DNfirst != 0) {
-        
+
         for (var i = 1; i < DNfirst; i++) calendar += '<td>';
     } else {
         for (var i = 0; i < 6; i++) calendar += '<td>';
@@ -15,7 +15,7 @@ function Calendar2(id, year, month) {
         if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) {
             calendar += '<td class="today">' + i;
         } else {
-            calendar += '<td onclick="showForm (container_form);">' + i;
+            calendar += '<td><a href="#openModal">' + i;
         }
         if (new Date(D.getFullYear(), D.getMonth(), i).getDay() == 0) {
             calendar += '<tr>';
@@ -37,18 +37,30 @@ document.querySelector('#calendar2 thead tr:nth-child(1) td:nth-child(3)').oncli
     Calendar2("calendar2", document.querySelector('#calendar2 thead td:nth-child(2)').dataset.year, parseFloat(document.querySelector('#calendar2 thead td:nth-child(2)').dataset.month) + 1);
 }
 
-document.querySelector('#calendar2 tbody tr:nth-child(1) td').onclick = function showForm (container_form) {
-    
-    //Если элемент с id-шником element_id существует
-    if (document.getElementById(element_id)) {
-        //Записываем ссылку на элемент в переменную obj
-        var obj = document.getElementById(element_id);
-        alert("Hi");
-        //Если css-свойство display не block, то: 
-        if (obj.style.display != "block") {
-            obj.style.display = "block"; //Показываем элемент
-            obj.style.position = this;
-            
-        } else obj.style.display = "none"; //Скрываем элемент
-    } 
-}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
+    console.log(scrollbar);
+    document.querySelector('[href="#openModal"]').addEventListener('click', function () {
+        document.body.style.overflow = 'hidden';
+        document.querySelector('#openModal').style.marginLeft = scrollbar;
+    });
+    document.querySelector('[href="#close"]').addEventListener('click', function () {
+        document.body.style.overflow = 'visible';
+        document.querySelector('#openModal').style.marginLeft = '0px';
+    });
+});
+
+
+
+
+
+function Complete()
+        {
+            var Elem="Событие: " + document.Sel1.sobytie.value +
+                "\nДень, месяц, год: " + document.Sel1.data.value +
+                "\nИмена участников: " + document.Sel1.name.value /*+
+                "\nОписание: " + document.Sel1.opisanie.value*/;
+            alert(Elem);
+        }

@@ -56,11 +56,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-function Complete()
-        {
-            var Elem="Событие: " + document.Sel1.sobytie.value +
-                "\nДень, месяц, год: " + document.Sel1.data.value +
-                "\nИмена участников: " + document.Sel1.name.value /*+
-                "\nОписание: " + document.Sel1.opisanie.value*/;
-            alert(Elem);
-        }
+function Complete() {
+    var Elem = "Событие: " + document.all.sobytie.value + "<br>" +
+        "День, месяц, год: " + document.all.data.value + "<br>" +
+        "Имена участников: " + document.all.name.value + "<br>" +
+        "Описание: " + document.all.opisanie.value;
+
+    document.all.output.innerHTML = Elem;
+}
+
+
+function _clear() {
+    document.getElementsByName('sobytie')[0].value = '';
+    document.getElementsByName('data')[0].value = '';
+    document.getElementsByName('name')[0].value = '';
+    document.getElementsByName('opisanie')[0].value = '';
+}

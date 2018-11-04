@@ -23,61 +23,31 @@
         </header>
 
         <div class="container_calend">
-            <table class="calend">
-                <caption>
-                    <div class="prev"><button value="prev">&#9664</button></div>
-                    <div><span class="name_month_text">Март 2013</span></div>
-                    <div class="next"><button value="next">&#9654</button></div>
-                </caption>
+
+            <table class="calend" id="calendar2">
+               
+                <thead>
+                    <tr>
+                        <td>
+                            <div class="prev"><button value="prev">&#9664</button></div>
+                        </td>
+                        <td class="name_month_text"></td>
+                        <td>
+                            <div class="next"><button value="next">&#9654</button></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Понедельник</td>
+                        <td>Вторник</td>
+                        <td>Среда</td>
+                        <td>Четверг</td>
+                        <td>Пятница</td>
+                        <td>Суббота</td>
+                        <td>Воскресенье</td>
+                    </tr>
+                </thead>
 
                 <tbody>
-                    <tr>
-                        <td><a href="#openModal#openModal">Понедельник, 25</a></td>
-                        <td><a href="#openModal">Вторник, 26</a></td>
-                        <td><a href="#openModal">Среда, 27</a></td>
-                        <td><a href="#openModal">Четверг, 28</a></td>
-                        <td><a href="#openModal">Пятница, 1</a></td>
-                        <td style="background-color: #F4F4F4;"><a href="#openModal">Суббота, 2</a></td>
-                        <td><a href="#openModal">Воскресенье, 3</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#openModal">4</a></td>
-                        <td><a href="#openModal">5</a></td>
-                        <td><a href="#openModal">6</a></td>
-                        <td><a href="#openModal">7</a></td>
-                        <td><a href="#openModal">8</a></td>
-                        <td style="background-color: #0371C7;"><a href="#openModal">9 <br>
-                        Напиться! <br>Витя Костин, Петр Михайлович</a></td>
-                        <td><a href="#openModal">10</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#openModal">11</a></td>
-                        <td><a href="#openModal">12</a></td>
-                        <td><a href="#openModal">13</a></td>
-                        <td><a href="#openModal">14</a></td>
-                        <td><a href="#openModal">15</a></td>
-                        <td><a href="#openModal">16</a></td>
-                        <td><a href="#openModal">17</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#openModal">18</a></td>
-                        <td><a href="#openModal">19</a></td>
-                        <td><a href="#openModal">20</a></td>
-                        <td><a href="#openModal">21</a></td>
-                        <td style="background-color: #0371C7;"><a href="#openModal">22 <br>
-                        Др! <br>Дима Молодцов</a></td>
-                        <td><a href="#openModal">23</a></td>
-                        <td><a href="#openModal">24</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="#openModal">25</a></td>
-                        <td><a href="#openModal">26</a></td>
-                        <td><a href="#openModal">27</a></td>
-                        <td><a href="#openModal">28</a></td>
-                        <td><a href="#openModal">29</a></td>
-                        <td><a href="#openModal">30</a></td>
-                        <td><a href="#openModal">31</a></td>
-                    </tr>
                 </tbody>
 
         </div>
@@ -93,13 +63,13 @@
                         </div>
                         <div class="modal-body">
                             <div class="form_inputcase_sobytie">
-                                <input type="text" placeholder="Событие"><input type="text" placeholder="День, месяц, год">
-                                <input type="text" placeholder="Имена участников">
+                                <input name="sobytie" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Событие"><input name="data" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="День, месяц, год">
+                                <input name="name" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Имена участников">
                             </div>
                             <div class="form_inputcase_opisanie">
-                                <textarea rows="10" cols="30" name="text" placeholder="Описание"></textarea>
+                                <textarea rows="10" cols="30" name="opisanie" placeholder="Описание"></textarea>
                                 <div class="submit_form">
-                                    <input type="submit" value="Готово">
+                                    <input type="button" value="Готово" onClick="Complete();">
                                     <input type="reset" value="Удалить">
                                 </div>
                             </div>
@@ -113,22 +83,10 @@
 
 
 
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var scrollbar = document.body.clientWidth - window.innerWidth + 'px';
-            console.log(scrollbar);
-            document.querySelector('[href="#openModal"]').addEventListener('click', function() {
-                document.body.style.overflow = 'hidden';
-                document.querySelector('#openModal').style.marginLeft = scrollbar;
-            });
-            document.querySelector('[href="#close"]').addEventListener('click', function() {
-                document.body.style.overflow = 'visible';
-                document.querySelector('#openModal').style.marginLeft = '0px';
-            });
-        });
 
-    </script>
+        </div>
+        <script src="scripts/calendar.js"></script>
+        <script src="scripts/showform.js"></script>
 </body>
 
 </html>

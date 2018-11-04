@@ -12,8 +12,8 @@
         <header>
             <div class="headcalend">
                 <div class="buttoncase">
-                    <div><button value="Добавить">Добавить</button></div>
-                    <div><button value="Обновить">Обновить</button></div>
+                    <div><button value="Добавить"><a href="#openModal">Добавить</a></button></div>
+                    <div><button value="Обновить"><a href="">Обновить</a></button></div>
                 </div>
                 <div class="search_inputcase">
                     <div><img src="img/Search_Icon.png" alt=""></div>
@@ -25,7 +25,7 @@
         <div class="container_calend">
 
             <table class="calend" id="calendar2">
-               
+
                 <thead>
                     <tr>
                         <td>
@@ -63,14 +63,15 @@
                         </div>
                         <div class="modal-body">
                             <div class="form_inputcase_sobytie">
-                                <input name="sobytie" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Событие"><input name="data" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="День, месяц, год">
-                                <input name="name" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Имена участников">
+                                <input name="sobytie" id="sobytie" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Событие"><input name="data" id="data" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="День, месяц, год">
+                                <input name="name" id="name" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Имена участников">
                             </div>
                             <div class="form_inputcase_opisanie">
                                 <textarea rows="10" cols="30" name="opisanie" placeholder="Описание"></textarea>
                                 <div class="submit_form">
-                                    <input type="button" value="Готово" onClick="Complete();">
-                                    <input type="reset" value="Удалить">
+                                    <a href="#close"><input
+                                    type="button" value="Готово" onClick="Complete();"></a>
+                                    <input type="reset" value="Удалить" onClick="_clear();">
                                 </div>
                             </div>
                         </div>
@@ -79,14 +80,14 @@
             </div>
         </div>
 
-
-
-
+        <div id="output">
 
 
         </div>
-        <script src="scripts/calendar.js"></script>
-        <script src="scripts/showform.js"></script>
+
+    </div>
+
+    <script src="scripts/calendar.js"></script>
 </body>
 
 </html>

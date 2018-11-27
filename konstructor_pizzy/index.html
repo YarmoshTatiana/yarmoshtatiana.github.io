@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Конструктор пиццы</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div class="choiseuser_wrap">
+            <div class="choiseuser">
+
+                <div class="listorders"> <p class="text">Ваш заказ:</p>
+                    <ul>
+
+                    </ul>
+                </div>
+
+                <div class="price"> <p class="text">Цена за шедевр: <span class="all_price">6</span> руб.* </p>
+                <p>*<span class="priceosnova">цена за основу 6 руб.</span></p></div>
+            </div>
+
+            <div class="pizza_wrap">
+                <div class="pizza"></div>
+                <div class="order"><button><a href="#openModal">Заказать</a></button></div>
+            </div>
+
+        </div>
+
+
+        <div class="ingridients">
+            <div class="cheese">
+                <h2>Сыр</h2>
+                <p>
+                    <label for="moz">Сыр Моцарелла</label>
+                    <input id="moz" type="radio" name="cheese" value="Сыр Моцарелла">
+                </p>
+                <p>
+                    <label for="parm">Сыр Пармезан</label>
+                    <input id="parm" type="radio" name="cheese" value="Сыр Пармезан">
+                </p>
+                <p>
+                    <label for="dorblue">Сыр Дор Блю</label>
+                    <input id="dorblue" type="radio" name="cheese" value="Сыр Дор Блю">
+                </p>
+            </div>
+            <div class="souse">
+                <h2>Соус</h2>
+                <p>
+                    <label for="tom">Томатный</label>
+                    <input id="tom" type="radio" name="souse" value="Томатный">
+                </p>
+                <p>
+                    <label for="garl">Чесночный</label>
+                    <input id="garl" type="radio" name="souse" value="Чесночный">
+                </p>
+                <p>
+                    <label for="franch">Французский</label>
+                    <input id="franch" type="radio" name="souse" value="Французский">
+                </p>
+                <p>
+                    <label for="firm">Фирменный</label>
+                    <input id="firm" type="radio" name="souse" value="Фирменный">
+                </p>
+                <p>
+                    <label for="sliv">Сливочный</label>
+                    <input id="sliv" type="radio" name="souse" value="Сливочный">
+                </p>
+            </div>
+            <div class="meatandfish">
+                <h2>Мясо/рыба</h2>
+                <p>
+                    <label for="ham">Ветчина</label>
+                    <input id="ham" type="radio" name="meatandfish" value="Ветчина">
+                </p>
+                <p>
+                    <label for="chiken">Курица</label>
+                    <input id="chiken" type="radio" name="meatandfish" value="Курица">
+                </p>
+                <p>
+                    <label for="pork">Свинина</label>
+                    <input id="pork" type="radio" name="meatandfish" value="Свинина">
+                </p>
+                <p>
+                    <label for="bacon">Бекон</label>
+                    <input id="bacon" type="radio" name="meatandfish" value="Бекон">
+                </p>
+                <p>
+                    <label for="shrimps">Креветки</label>
+                    <input id="shrimps" type="radio" name="meatandfish" value="Креветки">
+                </p>
+                <p>
+                    <label for="salmon">Семга</label>
+                    <input id="salmon" type="radio" name="meatandfish" value="Семга">
+                </p>
+            </div>
+            <div class="vegetables">
+                <h2>Овощи</h2>
+                <p>
+                    <label for="onion">Лук красный</label>
+                    <input id="onion" type="radio" name="vegetables" value="Лук красный">
+                </p>
+                <p>
+                    <label for="pepper">Перец болгарский</label>
+                    <input id="pepper" type="radio" name="vegetables" value="Перец болгарский">
+                </p>
+                <p>
+                    <label for="tomatoes">Помидорки черри</label>
+                    <input id="tomatoes" type="radio" name="vegetables" value="Помидорки черри">
+                </p>
+                <p>
+                    <label for="cucumbers">Огурчики маринованные</label>
+                    <input id="cucumbers" type="radio" name="vegetables" value="Огурчики маринованные">
+                </p>
+                <p>
+                    <label for="olives">Маслины</label>
+                    <input id="olives" type="radio" name="vegetables" value="Маслины">
+                </p>
+                <p>
+                    <label for="pineapples">Ананасы</label>
+                    <input id="pineapples" type="radio" name="vegetables" value="Ананасы">
+                </p>
+                <p>
+                    <label for="mushrooms">Шампиньоны</label>
+                    <input id="mushrooms" ves="50" type="radio" name="vegetables" value="Шампиньоны">
+                </p>
+            </div>
+        </div>
+
+   
+    </div>
+    
+    <!--Форма для заказа-->
+        <div id="container">
+            <div id="openModal" class="modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title">Введите данные </h3>
+                            <a href="#close" title="Close" class="close"></a>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form_inputcase_sobytie">
+                                <input name="name" id="name" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Ваше имя">
+                                <input name="sobytie" id="sobytie" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Адрес">
+                                <input name="data" id="data" onBlur="this.value=this.value.toUpperCase()" type="text" placeholder="Номер телефона">
+                            </div>
+                            <div class="form_inputcase_opisanie">
+                                <textarea rows="10" cols="30" name="opisanie" placeholder="Пожелания (время доставки и др.)"></textarea>
+                                <div class="submit_form">
+                                    <a href="#close"><input
+                                    type="button" value="Готово" onClick="сomplete();"></a>
+                                    <input type="reset" value="Удалить" onClick="clear();">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="scripts/script.js">
+
+
+    </script>
+
+</body>
+
+</html>

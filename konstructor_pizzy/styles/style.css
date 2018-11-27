@@ -63,7 +63,7 @@ body {
     position: absolute;
 }
 
-.order > button > a {
+.order > button {
     background-color: #242328;
     color: white;
     border: none;

@@ -1,0 +1,12 @@
+#wrapper {
+   width: 50%;
+    text-align: left;
+    margin: 200px auto;
+}
+button {
+    margin: 20px;
+}
+
+.active {
+    border: 1px solid red;
+}
